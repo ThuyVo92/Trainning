@@ -1,0 +1,189 @@
+*,
+:after,
+:before {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit; }
+
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 100%; }
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
+  @media only screen and (max-width: 575px) {
+    .row {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column; } }
+
+@media only screen and (min-width: 575px) {
+  .col-6 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%; } }
+
+@media only screen and (min-width: 575px) {
+  .col-4 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 33.333%;
+    flex: 0 0 33.333%;
+    max-width: 33.333%; } }
+
+.img-responsive {
+  max-width: 100%;
+  height: auto; }
+
+ul,
+li {
+  list-style: none; }
+
+li {
+  padding-bottom: 10px;
+  list-style: square; }
+
+a {
+  text-decoration: none;
+  -webkit-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  transition: all .5s ease; }
+  a:hover {
+    color: yellow; }
+
+.text-center {
+  text-align: center; }
+
+button,
+.button,
+.btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  background: #1a73e8;
+  -webkit-box-shadow: 0 10px 20px #000000;
+  box-shadow: 0 10px 20px #4071a5;
+  border-radius: .25rem;
+  color: #fff; }
+  button:focus,
+  .button:focus,
+  .btn:focus {
+    outline: none; }
+
+@-webkit-keyframes zooms {
+  0%,
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1); }
+  50% {
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5); } }
+
+@keyframes zooms {
+  0%,
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1); }
+  50% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2); } }
+
+.zooms {
+  -webkit-animation: zooms 20s infinite;
+  animation: zooms 20s infinite; }
+
+header .info-user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  background: yellowgreen;
+  padding: 15px; }
+  @media only screen and (max-width: 575px) {
+    header .info-user {
+      -webkit-box-pack: start;
+      -ms-flex-pack: start;
+      justify-content: flex-start; } }
+  header .info-user .avarta {
+    width: 60px;
+    height: 60px;
+    background: #334444;
+    border-radius: 50%;
+    overflow: hidden; }
+  header .info-user .name-user {
+    padding-left: 10px;
+    color: #fff; }
+    header .info-user .name-user:hover {
+      -webkit-transform: translateY(-5px);
+      -ms-transform: translateY(-5px);
+      transform: translateY(-5px); }
+
+body {
+  margin: 0;
+  font-size: 14px;
+  color: #334444; }
+  body .banner-full {
+    overflow: hidden; }
+  body #content {
+    background: yellow; }
+  body .infor-game,
+  body .system-game {
+    padding: 0 20px; }
+  body .infor-game {
+    position: relative; }
+    body .infor-game::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 1px;
+      background: #000000; }
+      @media only screen and (max-width: 575px) {
+        body .infor-game::after {
+          display: none; } }
+    @media only screen and (max-width: 575px) {
+      body .infor-game {
+        border-bottom: 1px solid #000;
+        padding-bottom: 30px;
+        margin-bottom: 20px;
+        padding-top: 25px; } }
+  body .trailer {
+    position: relative;
+    z-index: 1;
+    padding: 30px 0 50px; }
+  body .video {
+    display: none;
+    margin: 0 auto;
+    max-width: 100%; }
+
+footer {
+  color: #fff; }
+  footer .bg-footer {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background: #000000; }
+    @media only screen and (max-width: 575px) {
+      footer .bg-footer {
+        padding: 30px 0; } }
+  footer #map {
+    width: 100%;
+    min-height: 200px; }
+    @media only screen and (max-width: 575px) {
+      footer #map {
+        max-width: 100%;
+        min-width: 300px;
+        min-height: 200px;
+        margin-top: 30px; } }

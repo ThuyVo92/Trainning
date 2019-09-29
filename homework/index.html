@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>homework</title>
+    <meta name="viewport" content="width=device-width" ,initial-scale=1.0/>
+    <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="info-user">
+                <div class="avarta">
+                    
+                </div>
+                <a href="#" class="name-user">Phuong Thuy</a>
+            </div>
+        </div>
+    </header>
+    <main class="container">
+        <div id="content">
+            <div class="banner-full">
+                <a href="#">
+                    <img class="img-responsive zooms" src="./images/banner.jpg" alt="banner" />
+                </a>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="infor-game">
+                        <h2>Nhận biết được sự khác biệt giữa controlled và uncontrolled components</h2>
+                        <p>Cần phải thật tinh tế để biết được sự khác nhau giữa các components trên. Bạn có thể xem tài liệu về React, nhưng tôi đã hơi bối rối sau khi đọc nó. Để có thể chỉnh sửa các form elements , bạn có thể truyền giá trị vào theo hai
+                            cách khác nhau.</p>
+                        <p>React components implement a render() method that takes input data and returns what to display. This example uses an XML-like syntax called JSX. Input data that is passed into the component can be accessed by render() via this.props.</p>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="system-game">
+                        <h2>A Stateful Component</h2>
+                        <ul class="list-style">
+                            <li>In addition to taking input data (accessed via this.props), a component can maintain internal state data (accessed via this.state).</li>
+                            <li>When a component’s state data changes, the rendered markup will be updated by re-invoking render()</li>
+                            <li>Using props and state, we can put together a small Todo application</li>
+                            <li>This example uses state to track the current list of items as well as the text that the user has entered</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div  class="text-center">
+                <video id="video" class="video" src="http://www.w3schools.com/html/mov_bbb.mp4"  width="500" height="300" controls>
+                    Your browser does not support the <video> element.  
+                </video>
+            </div>
+            <div  class="trailer text-center">
+                <button id ="trailerButton" type="button" class="button">Trailer button</button>
+            </div>
+        </div>
+
+    </main>
+    <footer>
+        <div class="container">
+            <div class="row bg-footer">
+                <div class="col-4">
+                    <ul class="list-style">
+                        <li>
+                            <span>Email:</span>
+                            <a href="#" class="email">vapthuy92@gmail.com</a>
+                        </li>
+                        <li>
+                            <span>Tel:</span>
+                            <a href="#" class="email">0394 355320</a>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="col-4">
+                    <address>
+                        32/14C duong so 11, go vap
+                    </address>
+                </div>
+                <div class="col-4">
+                    <div class="over-map">
+                        <div id="map">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    </footer>
+
+</body>
+<script src="https://maps.googleapis.com/maps/api/js?callback=initMap"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+<script src="./main.js"></script>
+
+</html>
