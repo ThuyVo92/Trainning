@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ListMenu from './ListMenu'
 
 class Menu extends Component {
   constructor(props) {
@@ -23,22 +24,19 @@ class Menu extends Component {
       isActive: !isActive,
     });
   };
-  render() {
-    let MenuHeader = this.state.ListMenu.map((nameMenu, index) => {
-      return (
-        <li key={index} className={this.state.nameMenu ? 'active' : ''}>
-          <a
-            href="#"
-            name={nameMenu.name}
-            onClick={() => this.HandlerActive(nameMenu)}
-          >
-            {nameMenu.name}
-          </a>
-        </li>
-      );
-    });
 
-    return <ul className="menu">{MenuHeader}</ul>;
+
+  render() {
+    const AddClass = this.state.isActive ? 'active' : ''
+    return <ul className="menu">
+      {this.state.ListMenu.map(names => {
+        return <ListMenu
+          name={names.name}
+          className={AddClass}
+          click={this.HandlerActive}
+        />
+      })}
+    </ul>;
   }
 }
 

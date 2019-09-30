@@ -41,10 +41,8 @@ button {
         will-change: opacity, background-color, color;
         transition: opacity 0.3s, background-color 0.3s, color, 0.1s;
       }
-      &.active {
-        a {
-          opacity: 1;
-        }
+      a.active {
+        opacity: 1;
       }
     }
   }
