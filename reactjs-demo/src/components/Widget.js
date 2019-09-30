@@ -7,7 +7,6 @@ class Widget extends Component {
     return (
       <div className="widget">
         <div className="help">
-          <span className="icon-help"></span>
           <div className="noice">
             I'm just a tooltip. I'm just a tooltip. I'm just a tooltip. I'm just
             a tooltip. I'm just a tooltip.

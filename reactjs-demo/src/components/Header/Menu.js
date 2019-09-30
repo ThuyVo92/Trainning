@@ -1,35 +1,44 @@
 import React, { Component } from 'react';
 
 class Menu extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      ListMenu: [
+        { id: '1', name: 'sound' },
+        { id: '2', name: 'mixer' },
+        { id: '3', name: 'enhancement' },
+        { id: '4', name: 'eq' },
+        { id: '5', name: 'mic' },
+        { id: '6', name: 'lighting' },
+        { id: '7', name: 'power' },
+      ],
+      isActive: true,
+    };
+  }
+
+  HandlerActive = () => {
+    const isActive = this.state.isActive;
+    this.setState({
+      isActive: !isActive,
+    });
+  };
   render() {
-    return (
+    let MenuHeader = this.state.ListMenu.map((nameMenu, index) => {
+      return (
+        <li key={index} className={this.state.nameMenu ? 'active' : ''}>
+          <a
+            href="#"
+            name={nameMenu.name}
+            onClick={() => this.HandlerActive(nameMenu)}
+          >
+            {nameMenu.name}
+          </a>
+        </li>
+      );
+    });
 
-      <ul className="menu">
-        <li>
-          <a href="#">sound</a>
-        </li>
-        <li>
-          <a href="#">mixer</a>
-        </li>
-        <li>
-          <a href="#">enhancement</a>
-        </li>
-        <li>
-          <a href="#">eq</a>
-        </li>
-        <li>
-          <a href="#">mic</a>
-        </li>
-        <li>
-          <a href="#">lighting</a>
-        </li>
-        <li>
-          <a href="#">power</a>
-        </li>
-      </ul>
-
-
-    );
+    return <ul className="menu">{MenuHeader}</ul>;
   }
 }
 

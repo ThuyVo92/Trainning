@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { classes } from 'istanbul-lib-coverage';
 
 class Title extends Component {
   constructor(props) {
@@ -16,10 +15,15 @@ class Title extends Component {
     });
   };
   render() {
+    const buttonSwitch = this.state.IsActive ? 'on' : '';
     return (
       <div className="title">
         <span>{this.props.title}</span>
-        <button type="button" className="switch" onClick={this.ClickHandle}>
+        <button
+          type="button"
+          className={`switch ${buttonSwitch}`}
+          onClick={this.ClickHandle}
+        >
           <span className="handle"></span>
         </button>
       </div>

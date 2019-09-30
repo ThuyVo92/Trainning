@@ -12,6 +12,11 @@ li {
 div {
   box-sizing: border-box;
 }
+button {
+  &:focus {
+    outline: none;
+  }
+}
 .nav-menu {
   width: 100%;
   background-color: #44d62c;
@@ -35,6 +40,11 @@ div {
         opacity: 0.3;
         will-change: opacity, background-color, color;
         transition: opacity 0.3s, background-color 0.3s, color, 0.1s;
+      }
+      &.active {
+        a {
+          opacity: 1;
+        }
       }
     }
   }
@@ -74,6 +84,46 @@ div {
       font-size: 16px;
       margin-bottom: 20px;
     }
+    .help {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      &::before {
+        content: '';
+        background: url(../img_ui/tooltip_questionmark.svg);
+        display: inline-block;
+        height: 14px;
+        width: 14px;
+        background-color: #6c6c6c;
+        border-radius: 50%;
+        will-change: background-color;
+        transition: background-color 0.3s;
+      }
+      &:hover {
+        .noice {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+      .noice {
+        position: absolute;
+        top: 100%;
+        min-width: 300px;
+        right: 0;
+        background-color: #000000;
+        border: 1px solid #5d5d5d;
+        font-size: 14px;
+        color: #ccc;
+        text-align: left;
+        line-height: 16px;
+        padding: 8px 10px;
+        z-index: 99;
+        opacity: 0;
+        visibility: hidden;
+        will-change: visibility, opacity;
+        transition: visibility 0s, opacity 0.3s linear;
+      }
+    }
   }
 }
 .switch {
@@ -90,6 +140,9 @@ div {
   transition: background-color 0.3s;
   &.on {
     background-color: #44d62c;
+    .handle {
+      left: 17px;
+    }
   }
   .handle {
     position: absolute;
