@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ListMenu from './ListMenu'
+import ListMenu from './ListMenu';
 
 class Menu extends Component {
   constructor(props) {
@@ -14,7 +14,7 @@ class Menu extends Component {
         { id: '6', name: 'lighting' },
         { id: '7', name: 'power' },
       ],
-      isActive: true,
+      isActive: false,
     };
   }
 
@@ -25,18 +25,18 @@ class Menu extends Component {
     });
   };
 
-
   render() {
-    const AddClass = this.state.isActive ? 'active' : ''
-    return <ul className="menu">
-      {this.state.ListMenu.map(names => {
-        return <ListMenu
-          name={names.name}
-          className={AddClass}
-          click={this.HandlerActive}
-        />
-      })}
-    </ul>;
+    const AddClass = this.state.isActive ? 'active' : '';
+    let elmItems = this.state.ListMenu.map(names => (
+      <ListMenu
+        key={names.id}
+        link={names.name}
+        name={names.name}
+        class={AddClass}
+        click={this.HandlerActive}
+      />
+    ));
+    return <ul className="menu">{elmItems}</ul>;
   }
 }
 

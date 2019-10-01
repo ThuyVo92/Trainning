@@ -1,24 +1,13 @@
 import React, { Component } from 'react';
 
 class ListMenu extends Component {
-
-  onSetClass(params) {
-    this.setState({
-      isActive: params
-    })
-  }
-
-  setActive = (params) => {
-    this.props.onSetClass({
-
-    })
-  }
   render() {
     return (
-      <li className={this.props.className} onReceiveClass="{this.onSetClass}" onClick={() => this.setActive}>
+      <li className={this.props.class}>
         <a
-          href="#"
+          href={`/${this.props.link}`}
           name={this.props.name}
+          onClick={this.click}
         >
           {this.props.name}
         </a>
