@@ -4,14 +4,14 @@ class SliderContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      IsActive: this.props.IsActive,
+      // isActive: this.props.isActive,
     };
   }
   render() {
-    const ButtonOn = this.state.IsActive ? 'on' : '';
+    const AddClass = this.props.isActive ? 'on' : '';
     return (
       <div
-        className={`slider-container ${ButtonOn}`}
+        className={`slider-container ${AddClass}`}
         id={this.props.idContainer}
       >
         <div className="foot min">low</div>

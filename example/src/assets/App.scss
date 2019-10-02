@@ -1,0 +1,84 @@
+.container{
+  width: 1170px;
+  margin: 0 auto;
+}
+ul,li{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}
+.ItemPerson{
+  text-align: left;
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid #cccccc;
+  margin-bottom: 30px;
+  li{
+    padding-bottom: 10px;
+  }
+}
+.button{
+  padding: 15px 20px;
+  border-radius: 5px;
+  background: #cccccc;
+  color: #000000;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: 1px solid #cccccc;
+  &:focus{
+    outline: none;
+  }
+}
+.ListButton{
+  display: flex;
+  flex-direction: column;
+  > div{
+    margin-bottom: 20px;
+  }
+  .button{
+    display: inline-block;
+    margin-bottom: 30px;
+  }
+}
+.flex{
+  display: flex;
+  &.align-center{
+    align-items: center;
+  }
+
+}
+.Add-person{
+  display: none;
+  &.open{
+    display: block;
+  }
+  label{
+    padding-right: 25px;
+  }
+  > div{
+    margin-bottom: 10px;
+  }
+}
+div{
+  box-sizing: border-box;
+}
+.box-content{
+  border: 1px solid #cccccc;
+}
+.row{
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.col-left{
+  flex: 0 0 33.33%;
+  max-width: 33.33%;
+}
+.col-right{
+  flex: 0 0 66.66%;
+  max-width: 66.66%;
+}
+div[class*="col-"]{
+  padding-left: 15px;
+  padding-right: 15px;
+}
