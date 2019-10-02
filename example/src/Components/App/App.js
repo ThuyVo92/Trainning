@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import '../../assets/App.scss';
 import Person from '../../Components/Person';
-import AddPerson from '../AddPerson';
+import AddPerson from '../../Components/AddPerson';
 
 class App extends Component {
   constructor(props){
@@ -27,7 +27,7 @@ class App extends Component {
         age: 21
         }
       ],
-      isActive: true
+      isActive: false
     }
   }
 
@@ -61,7 +61,7 @@ class App extends Component {
             <div className="ListButton">
               <button  className="button button-add" onClick = {this.CLickHandle}
             >Add Person</button>
-            <AddPerson />
+            <AddPerson isActive={this.state.isActive}/>
               <button 
                 className="button button-remove" 
                 onClick ={() => this.DeletePerson()}

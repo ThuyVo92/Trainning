@@ -49,9 +49,12 @@ a{
 
 }
 .Add-person{
-  display: none;
+  transition: height .5s linear,visibility .5s ease;
+  height: 0;
+  visibility: hidden;
   &.open{
-    display: block;
+    height: 100%;
+    visibility: visible;
   }
   label{
     padding-right: 25px;
