@@ -22,10 +22,6 @@ class AddPerson extends Component {
     })
   }
 
-  // GenerateID = () => {
-  //   this.props.GenerateID();
-  // }
-
   onSubmit =  (event) => {
     event.preventDefault();
     this.props.onSubmit(this.state);

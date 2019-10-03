@@ -29,6 +29,7 @@ class App extends Component {
         }
       ],
       isActive: false,
+      ActivePer: false,
       SelectIndex: null,
     }
   }
@@ -43,6 +44,13 @@ class App extends Component {
   CLickHandle = () => {
     const isActive = this.state.isActive;
     this.setState({isActive : !isActive})
+  }
+
+  HandlePerson = () => {
+    const ActivePer = this.state.ActivePer;
+    this.setState({
+      ActivePer : !ActivePer
+    })
   }
 
   DeletePerson = () => {
@@ -62,8 +70,9 @@ class App extends Component {
   SelectPerson = (id) => {
     let Persons = this.state.Persons;
     let index = Persons.findIndex(person => 
-      person.id === id
+      person.id === id ? this.HandlePerson() : ''
     )
+   
     this.setState({
       SelectIndex : index,
     })
@@ -71,9 +80,10 @@ class App extends Component {
 
   render(){
 
-    let elmAddPerson = this.state.isActive ? < AddPerson GenerateID={this.GenerateID} onSubmit = {this.onSubmit}/> : "";
+    let elmAddPerson = this.state.isActive ? < AddPerson GenerateID={this.GenerateID} onSubmit = {this.onSubmit} /> : "";
 
     let mapPerson = null;
+
     if (this.state.Persons){
       mapPerson = this.state.Persons.map((person, index) => (
         <Person 
@@ -83,6 +93,8 @@ class App extends Component {
           gender={person.gender}
           age={person.age}
           SelectPerson = {this.SelectPerson}
+          ActivePer = {this.state.ActivePer}
+          HandlePerson = {this.HandlePerson}
         />
       ))
     }
