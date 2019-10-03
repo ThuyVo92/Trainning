@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
 
-const Tips = props => {
-  return (
-    <div className="help">
-      <div className="noice">{props.description}</div>
-    </div>
-  );
-};
+class Tips extends Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div className="help">
+        <div className="noice">{this.props.description}</div>
+      </div>
+    );
+  }
+}
 export default Tips;

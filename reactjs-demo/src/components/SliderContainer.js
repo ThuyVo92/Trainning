@@ -3,9 +3,7 @@ import React, { Component } from 'react';
 class SliderContainer extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      // isActive: this.props.isActive,
-    };
+    this.state = {};
   }
   render() {
     const AddClass = this.props.isActive ? 'on' : '';

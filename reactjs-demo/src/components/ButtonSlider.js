@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Title extends Component {
+class ButtonSlider extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -29,4 +29,4 @@ class Title extends Component {
   }
 }
 
-export default Title;
+export default ButtonSlider;

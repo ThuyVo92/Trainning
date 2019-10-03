@@ -30,6 +30,9 @@ a{
     outline: none;
   }
 }
+input{
+  padding: 6px 15px;
+}
 .ListButton{
   display: flex;
   flex-direction: column;
@@ -50,18 +53,15 @@ a{
 }
 .Add-person{
   transition: height .5s linear,visibility .5s ease;
-  height: 0;
-  visibility: hidden;
-  &.open{
-    height: 100%;
-    visibility: visible;
-  }
   label{
     padding-right: 25px;
+    width: 80px;
   }
-  > div{
+  form > div{
     margin-bottom: 10px;
+    display: flex;
   }
+  
 }
 div{
   box-sizing: border-box;

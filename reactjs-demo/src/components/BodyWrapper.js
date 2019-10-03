@@ -29,7 +29,11 @@ class BodyWrapper extends Component {
           <div className="widget-col col-left">
             <div className="widget">
               <Tips description={this.state.tips[0].description} />
-              <ContentWidget nameButton="microphone" idButton="swPhone" />
+              <ContentWidget
+                nameButton="microphone"
+                idButton="swPhone"
+                titleChild="Mic Volume"
+              />
               <ContentWidget nameButton="mic sensitivity" idButton="swSensi">
                 Adjust this setting to remove unwanted background noise or
                 increase the amount of mic output heard

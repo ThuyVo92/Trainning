@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 import '../../assets/App.scss';
 import Person from '../../Components/Person';
 import AddPerson from '../../Components/AddPerson';
+import randomString from 'randomstring'
 
 class App extends Component {
   constructor(props){
@@ -9,26 +10,34 @@ class App extends Component {
     this.state = {
       Persons: [
         {
-        id: 1,
+        id: this.GenerateID(),
         name: 'ball',
         gender: "male",
         age: 20,
         },
         {
-        id: 2,
+        id: this.GenerateID(),
         name: 'coin',
         gender: "female",
         age: 30
         },
         {
-        id: 3,
+        id: this.GenerateID(),
         name: 'candy',
         gender: "male",
         age: 21
         }
       ],
-      isActive: false
+      isActive: false,
+      SelectIndex: null,
     }
+  }
+
+  GenerateID (){
+    let x = randomString.generate({
+      numeric : '123456789'
+    })
+    return x;
   }
 
   CLickHandle = () => {
@@ -36,23 +45,47 @@ class App extends Component {
     this.setState({isActive : !isActive})
   }
 
-  DeletePerson = (PersonIndex) => {
+  DeletePerson = () => {
     const Persons = this.state.Persons;
-    Persons.splice(PersonIndex,1);
+    Persons.splice(this.state.SelectIndex,1);
     this.setState({Persons: Persons})
   }
 
+  onSubmit = (data) => {
+    let Persons = this.state.Persons;
+    Persons.push(data);
+    this.setState({
+      Persons : Persons
+    })
+  }
+
+  SelectPerson = (id) => {
+    let Persons = this.state.Persons;
+    let index = Persons.findIndex(person => 
+      person.id === id
+    )
+    this.setState({
+      SelectIndex : index,
+    })
+  }
+
   render(){
-    
-    let mapPerson = this.state.Persons.map((person, index) => (
-      <Person 
-        key={index}
-        id={person.id}
-        name={person.name}
-        gender={person.gender}
-        age={person.age}
-      />
-    ))
+
+    let elmAddPerson = this.state.isActive ? < AddPerson GenerateID={this.GenerateID} onSubmit = {this.onSubmit}/> : "";
+
+    let mapPerson = null;
+    if (this.state.Persons){
+      mapPerson = this.state.Persons.map((person, index) => (
+        <Person 
+          key={index}
+          id={person.id}
+          name={person.name}
+          gender={person.gender}
+          age={person.age}
+          SelectPerson = {this.SelectPerson}
+        />
+      ))
+    }
 
     return (
       <div className="container ">
@@ -61,11 +94,11 @@ class App extends Component {
             <div className="ListButton">
               <button  className="button button-add" onClick = {this.CLickHandle}
             >Add Person</button>
-            <AddPerson isActive={this.state.isActive}/>
+            {elmAddPerson}
               <button 
                 className="button button-remove" 
                 onClick ={() => this.DeletePerson()}
-            >Remove Perso
+            >Remove Person
               </button>
             </div>
           </div>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ButtonSlider from './ButtonSlider';
 import SliderContainer from './SliderContainer';
+import TitleChild from './TitleChild';
 
 class BodyWidget extends Component {
   constructor(props) {
@@ -16,14 +17,14 @@ class BodyWidget extends Component {
 
   render() {
     return (
-      <div>
+      <div className="block-widget">
         <ButtonSlider
           nameButton={this.props.nameButton}
           idButton={this.props.idButton}
           handleSwitch={this.handleSwitch}
           isActive={this.state.isActive}
         />
-        <h2 className="title-h2">Mic Volume</h2>
+        <TitleChild titleChild={this.props.titleChild} />
         <SliderContainer
           idContainer="slPhone"
           isActive={this.state.isActive}

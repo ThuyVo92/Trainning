@@ -1,17 +1,20 @@
 import React,{Component} from 'react';
 
 
-class App extends Component {
+class Person extends Component {
   constructor(props){
     super(props);
     this.state = {
     }
   }
 
+  SelectPerson = () => {
+    this.props.SelectPerson(this.props.id);
+  }
 
   render(){
     return (
-      <ul id={this.props.id} className="ItemPerson">
+      <ul id={this.props.id} className="ItemPerson" onClick={() => this.SelectPerson()}>
           <li >Name : {this.props.name}</li>
           <li >Gender : {this.props.gender}</li>
           <li>Age: {this.props.age}</li>          
@@ -20,4 +23,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Person;
